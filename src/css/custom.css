@@ -26,5 +26,21 @@
   --ifm-color-primary-light: #29d5b0;
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
+  --ifm-navbar-background-color: rgb(36, 37, 38);
+  --ifm-footer-background-color: var(--ifm-navbar-background-color);
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+
+.footer__copyright {
+  width: fit-content;
+  opacity: 0.6;
+}
+
+.footer__copyright span {
+  display: none;
+}
+
+.footer__copyright:hover span {
+  display: inline-block;
 }
