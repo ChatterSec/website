@@ -28,7 +28,7 @@ class Topography {
 
             const charDimensions = testChar.getBoundingClientRect();
             const charWidth = charDimensions.width;
-            const charHeight = charDimensions.height;
+            const charHeight = charDimensions.height - 1.4;
 
             const cols = Math.floor(this.target.offsetWidth / charWidth);
             const rows = Math.floor(this.target.offsetHeight / charHeight);

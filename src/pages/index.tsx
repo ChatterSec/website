@@ -17,7 +17,7 @@ function HomepageHeader() {
 
     let xOff = 0;
     let yOff = 0;
-    let off = 1000;
+    let off = 900;
 
     topography.ascii(xOff,yOff);
 
@@ -33,25 +33,25 @@ function HomepageHeader() {
 
         if (distanceX > 200) {
           xOff -= distanceX / off;
-          topography.ascii(xOff,yOff);
         }
 
         if (distanceX < -200) {
           xOff -= distanceX / off;
-          topography.ascii(xOff,yOff);
         }
 
         if (distanceY > 10) {
           yOff -= distanceY / off;
-          topography.ascii(xOff,yOff);
         }
 
         if (distanceY < -10) {
           yOff -= distanceY / off;
-          topography.ascii(xOff,yOff);
         }
 
-        console.log(`Distance from center of #ascii-background to mouse: (${distanceX}, ${distanceY})`);
+        yOff = parseInt(yOff * 1000) / 1000;
+        xOff = parseInt(xOff * 1000) / 1000;
+
+        topography.ascii(xOff,yOff);
+        console.log(xOff, yOff)
       }
     });
 
