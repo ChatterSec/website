@@ -20,10 +20,21 @@ function HomepageHeader() {
     let off = 900;
 
     topography.ascii(xOff,yOff);
+    const container = document.querySelector('.headerContainer');
+
+    let mouseX = 0;
+    let mouseY = 0;
+    let target;
 
     document.addEventListener('mousemove', (e) => {
-      const container = document.querySelector('.headerContainer');
-    
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      target = e.target;
+    });
+
+    const interval = setInterval(function() {
+      let e = {clientX: mouseX, clientY: mouseY, target: target};
+
       if (container.contains(e.target)) {
         const centerX = container.offsetLeft + container.offsetWidth / 2;
         const centerY = container.offsetTop + container.offsetHeight / 2;
@@ -53,7 +64,7 @@ function HomepageHeader() {
         topography.ascii(xOff,yOff);
         console.log(xOff, yOff)
       }
-    });
+    }, 50);
 
   }, []);
 
